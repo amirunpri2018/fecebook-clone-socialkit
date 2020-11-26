@@ -1,0 +1,16 @@
+<div class="list-wrapper">
+    <div class="list-header"><?php echo $lang['terms_privacy_label']; ?></div>
+    <?php
+        if (is_array($sk['terms']['privacy'])) {
+            $i = 0;
+            
+            foreach ($sk['terms']['privacy'] as $text) {
+                $i++;
+                echo '<div class="list-column">
+        <strong>' . $i . '</strong>. 
+        ' . $text . '
+    </div>';
+            }
+        }
+    ?>
+</div>

@@ -1,0 +1,16 @@
+<div class="list-wrapper">
+    <div class="list-header"><?php echo $lang['terms_tos_label']; ?></div>
+    <?php
+        if (is_array($sk['terms']['tos'])) {
+            $i = 0;
+            
+            foreach ($sk['terms']['tos'] as $text) {
+                $i++;
+                echo '<div class="list-column">
+        <strong>' . $i . '</strong>. 
+        ' . $text . '
+    </div>';
+            }
+        }
+    ?>
+</div>

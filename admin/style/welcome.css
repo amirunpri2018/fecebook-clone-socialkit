@@ -1,0 +1,26 @@
+body {
+background: #ffffff;
+background-size: cover;
+}
+
+
+h1 {
+color: black;
+text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+}
+small {
+color: black;
+font-size: 21px;
+text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+}
+
+.footer-wrapper {
+color: #dddedf;
+text-shadow: 1px 0 0 rgba(0, 0, 0, 0.5);
+}
+.footer-wrapper a {
+color: black;
+}
+.footer-content {
+border-color: rgba(0,0,0,0.2);
+}
