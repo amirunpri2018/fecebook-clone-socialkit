@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Nov 2020 pada 05.05
+-- Waktu pembuatan: 26 Nov 2020 pada 06.15
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.5
 
@@ -48,13 +48,6 @@ CREATE TABLE `accounts` (
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `verified` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data untuk tabel `accounts`
---
-
-INSERT INTO `accounts` (`id`, `about`, `active`, `avatar_id`, `cover_id`, `cover_position`, `email`, `email_verification_key`, `email_verified`, `language`, `last_logged`, `name`, `password`, `time`, `timestamp`, `timezone`, `type`, `username`, `verified`) VALUES
-(1, '', 1, 1, 0, 0, 'admin@gmail.com', 'd1cbaa89f9e6d6fadb1f5381c1be258d', 0, 'english', 1606362958, 'Adminisrator', '21232f297a57a5a743894a0e4a801fc3', 1606136319, '2020-11-26 03:55:58', 'Asia/Makassar', 'user', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -118,13 +111,6 @@ CREATE TABLE `followers` (
   `time` int(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data untuk tabel `followers`
---
-
-INSERT INTO `followers` (`id`, `active`, `is_chatting`, `follower_id`, `following_id`, `time`, `timestamp`) VALUES
-(1, 1, 0, 1, 1, 1606136325, '2020-11-23 12:58:45');
 
 -- --------------------------------------------------------
 
@@ -191,7 +177,8 @@ CREATE TABLE `media` (
 
 INSERT INTO `media` (`id`, `active`, `album_id`, `extension`, `name`, `post_id`, `temp`, `timeline_id`, `type`, `url`) VALUES
 (1, 1, 0, 'jpg', '3a85965b-c124-48ec-b27c-d060db176343.jpg', 0, 0, 0, 'photo', 'photos/2020/11/wHmCW_1_c4ca4238a0b923820dcc509a6f75849b'),
-(2, 1, 0, 'jpg', '3a85965b-c124-48ec-b27c-d060db176343.jpg', 0, 0, 0, 'photo', 'photos/2020/11/cwIfK_2_c81e728d9d4c2f636f067f89cc14862c');
+(2, 1, 0, 'jpg', '3a85965b-c124-48ec-b27c-d060db176343.jpg', 0, 0, 0, 'photo', 'photos/2020/11/cwIfK_2_c81e728d9d4c2f636f067f89cc14862c'),
+(3, 1, 0, 'jpg', '3a85965b-c124-48ec-b27c-d060db176343.jpg', 0, 0, 0, 'photo', 'photos/2020/11/JQkH2_3_eccbc87e4b5ce2fe28308fd9f2a7baf3');
 
 -- --------------------------------------------------------
 
@@ -212,13 +199,6 @@ CREATE TABLE `notifications` (
   `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
   `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data untuk tabel `notifications`
---
-
-INSERT INTO `notifications` (`id`, `active`, `notifier_id`, `post_id`, `seen`, `text`, `time`, `timestamp`, `timeline_id`, `type`, `url`) VALUES
-(1, 1, 2, 0, 1606137562, 'is following you.', 1606137558, '2020-11-23 13:19:22', 1, 'following', 'index.php?tab1=timeline&tab2=followers&id=admin');
 
 -- --------------------------------------------------------
 
@@ -469,13 +449,6 @@ CREATE TABLE `posts` (
   `youtube_title` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data untuk tabel `posts`
---
-
-INSERT INTO `posts` (`id`, `active`, `google_map_name`, `hidden`, `link_title`, `link_url`, `media_id`, `post_id`, `recipient_id`, `soundcloud_title`, `soundcloud_uri`, `seen`, `text`, `time`, `timeline_id`, `timestamp`, `type1`, `type2`, `youtube_video_id`, `youtube_title`) VALUES
-(3, 1, '', 0, '', '', 0, 1, 0, '', '', 0, '', 1606137582, 1, '2020-11-23 13:19:42', 'story', 'like', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -509,13 +482,6 @@ CREATE TABLE `users` (
   `message_privacy` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'everyone',
   `timeline_post_privacy` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'everyone'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data untuk tabel `users`
---
-
-INSERT INTO `users` (`id`, `birthday`, `comment_privacy`, `confirm_followers`, `current_city`, `follow_privacy`, `gender`, `hometown`, `message_privacy`, `timeline_post_privacy`) VALUES
-(1, '20-10-2005', 'everyone', 0, '', 'everyone', 'male', '', 'everyone', 'everyone');
 
 --
 -- Indexes for dumped tables
@@ -646,7 +612,7 @@ ALTER TABLE `hashtags`
 -- AUTO_INCREMENT untuk tabel `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `notifications`
@@ -670,7 +636,7 @@ ALTER TABLE `page_categories`
 -- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `reports`
